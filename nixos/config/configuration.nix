@@ -280,8 +280,19 @@ in
   hardware.cpu.intel.updateMicrocode = true;
 
   # ===== Performance preset =====
-  # CPU: full performance governor (bukan powersave)
-  powerManagement.cpuFreqGovernor = "performance";
+  # CPU: performance via power-profiles-daemon (cpufreq.service doang nggak cukup —
+  # PPD start lebih akhir dan override governor balik ke powersave).
+  systemd.services.power-profile-performance = {
+    description = "Force power profile: performance on boot";
+    after = [ "power-profiles-daemon.service" ];
+    wants = [ "power-profiles-daemon.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.power-profiles-daemon}/bin/powerprofilesctl set performance";
+      RemainAfterExit = true;
+    };
+  };
 
   # Kernel params: disable Spectre/Meltdown mitigations (+5-10% performa)
   # NOTE: mitigations=off = buka resiko side-channel attack. Personal laptop,
