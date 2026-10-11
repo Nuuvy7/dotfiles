@@ -223,6 +223,18 @@
     xdg-utils zenity
   ];
 
+  # ===== Flatpak =====
+  services.flatpak.enable = true;
+  
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org
+    '';
+  };
+  
+
   # ===== AUR alternatif (catatan, tidak dieksekusi) =====
   # Paket AUR yang tidak ada di nixpkgs → distrobox Arch container:
   #   distrobox-create -n arch -i archlinux:latest  → paru + AUR asli

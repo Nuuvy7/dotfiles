@@ -258,6 +258,9 @@ in
   # ===== Time sync =====
   services.timesyncd.enable = true;
 
+  # ===== Flatpak (Flathub) =====
+  services.flatpak.enable = true;
+
   security.polkit.enable = true;
 
   # ===== Hardware khas laptop (Intel Alder Lake, i5-1235U) =====
