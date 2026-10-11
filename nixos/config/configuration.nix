@@ -279,10 +279,28 @@ in
   };
   hardware.cpu.intel.updateMicrocode = true;
 
-  # zram (zram-generator di Arch)
+  # ===== Performance preset =====
+  # CPU: full performance governor (bukan powersave)
+  powerManagement.cpuFreqGovernor = "performance";
+
+  # Kernel params: disable Spectre/Meltdown mitigations (+5-10% performa)
+  # NOTE: mitigations=off = buka resiko side-channel attack. Personal laptop,
+  # nggak ada multi-user → risk acceptable. Hapus baris ini kalau mau security balik.
+  boot.kernelParams = [ "mitigations=off" "nowatchdog" ];
+
+  # Sysctl tuning: RAM-first (swappiness rendah karena zram bukan primary),
+  # cache dipertahankan lebih lama, dirty pages flush lebih cepat (responsif I/O).
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+    "vm.vfs_cache_pressure" = 50;
+    "vm.dirty_ratio" = 10;
+    "vm.dirty_background_ratio" = 5;
+  };
+
+  # zram (zram-generator di Arch) — 8G target
   zramSwap = {
     enable = true;
-    memoryPercent = 50;
+    memoryMax = 8192;  # 8G dalam MB
   };
 
   # ===== Fonts =====
