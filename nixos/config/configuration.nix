@@ -297,10 +297,12 @@ in
     "vm.dirty_background_ratio" = 5;
   };
 
-  # zram (zram-generator di Arch) — 8G target
+  # zram (zram-generator di Arch) — target ~8G via percent RAM.
+  # Pakai memoryPercent (empirinya stabil); memoryMax di module punya
+  # konversi unit yang bikin zram-size conf nggak kebaca bener.
   zramSwap = {
     enable = true;
-    memoryMax = 8192;  # 8G dalam MB
+    memoryPercent = 107;  # 107% × 7.5G RAM ≈ 8G (zram compressed, > RAM normal)
   };
 
   # ===== Fonts =====
