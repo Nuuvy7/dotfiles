@@ -1,4 +1,4 @@
-{ serpantinum, zen-browser, dream-journey-cursor, ... }:
+{ serpantinum, zen-browser, dream-journey-cursor, pkgs, ... }:
 
 {
   imports = [
@@ -26,7 +26,10 @@
   };
 
   # Paket user tambahan (sebagian tetap di systemPackages configuration.nix).
-  home.packages = [ ];
+  # seclists: data-only wordlist — ditaruh di home.packages karena ada issue
+  # lama di nixpkgs: seclists tidak selalu masuk closure systemPackages
+  # (toplevel build bisa skip walau eval bilang ada).
+  home.packages = [ pkgs.seclists ];
 
   # File monochrome.css (theme Zen grayscale) — ditaruh di chrome/ profil
   # biar bisa di-@import oleh userChrome.css di atas.

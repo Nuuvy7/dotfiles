@@ -412,7 +412,6 @@ in
     burpsuite      # web proxy (unfree, allowUnfree sudah on di flake)
     binwalk        # firmware/embedded forensics
     nmap ffuf sqlmap gobuster
-    seclists       # wordlist buat fuzzing/brute
     hashcat john   # password cracking
     wireshark
     ghidra         # reverse engineering — ~2GB, hapus kalau berat

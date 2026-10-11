@@ -104,6 +104,7 @@
               self = self;
               zen-browser = zen-browser;
               dream-journey-cursor = dream-journey-cursor;
+              pkgs = nixpkgs.legacyPackages.x86_64-linux;
             };
           };
         }
