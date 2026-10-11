@@ -22,5 +22,5 @@ cli-secret
 node_modules/
 __pycache__/
 
-# NixOS generated (per-machine, rebuild from hardware probe)
-hardware-configuration.nix
+# NixOS generated (per-machine, tapi nggak di-ignore — perlu buat bootstrap)
+# hardware-configuration.nix tetap di-track

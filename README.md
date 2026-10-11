@@ -77,8 +77,8 @@ sudo nixos-rebuild switch --flake .#windflower
 
 ## 📝 Notes
 
-- `hardware-configuration.nix` di-gitignore (per-machine)
-- Secret files (`.env`, `auth.json`, `*credentials*`) di-gitignore — setup manual per mesin
+- `hardware-configuration.nix` **di-track** (per-machine tapi perlu buat bootstrap; edit manual kalau ganti hardware)
+- Secret files (`.env`, `auth.json`, `*credentials*`, `*.token`) di-gitignore — setup manual per mesin
 - Rebuild pertama: ~15 menit (download + compile)
 - Theme taman Windflower: lifecycle notif gateway pakai 🌸🌙 konsisten
 
