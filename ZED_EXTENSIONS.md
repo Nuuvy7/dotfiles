@@ -1,15 +1,15 @@
 # Zed Extensions — Recommended Install
 
-Extension Zed nggak bisa auto-install via script (butuh Zed runtime). Install manual via GUI:
+Zed extensions can't be auto-installed via script (requires Zed runtime). Install manually via GUI:
 
-1. Buka Zed
-2. Command Palette: `Ctrl+Shift+P` (atau `Cmd+Shift+P` macOS)
-3. Ketik: `extensions: install extension`
-4. Search + install extension di bawah
+1. Open Zed
+2. Command Palette: `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS)
+3. Type: `extensions: install extension`
+4. Search + install extensions below
 
 ---
 
-## 🗣️ Bahasa (Language Support)
+## 🗣️ Language Support
 
 - [ ] **nix** — Nix syntax + LSP
 - [ ] **lua** — Lua syntax
@@ -52,6 +52,6 @@ Extension Zed nggak bisa auto-install via script (butuh Zed runtime). Install ma
 
 ## 📝 Notes
 
-- Extension di Zed: `~/.local/share/zed/extensions/installed/`
-- Restart Zed setelah install extension baru
-- Cek available extensions: https://zed.dev/extensions atau in-app Extensions panel
+- Extensions live in `~/.local/share/zed/extensions/installed/`
+- Restart Zed after installing new extensions
+- Browse available extensions: https://zed.dev/extensions or in-app Extensions panel

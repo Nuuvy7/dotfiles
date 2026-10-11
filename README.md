@@ -1,8 +1,8 @@
 # dotfiles — NixOS + Hyprland + Serpantinum
 
-Konfigurasi lengkap mesin `windflower` (NixOS 26.05) — declarative system + app configs.
+My NixOS configuration with Hyprland, Serpantinum shell, and declarative app configs. Fully reproducible flake-based setup.
 
-## 📦 Isi
+## 📦 What's Inside
 
 ```
 nixos/
@@ -24,32 +24,38 @@ config/
 └── btop/btop.conf             # System monitor
 ```
 
-## 🚀 Bootstrap mesin baru
+## 🚀 Fresh Install
 
 ```bash
-# 1. Clone repo
-git clone https://github.com/nuuvy7/dotfiles ~/dotfiles
+# 1. Clone the repo
+git clone https://github.com/Nuuvy7/dotfiles ~/dotfiles
 cd ~/dotfiles
 
-# 2. Link app configs ke home
+# 2. Link app configs to home directory
 chmod +x install.sh
 ./install.sh
 
-# 3. Rebuild NixOS dari repo
-cd nixos
-sudo nixos-rebuild switch --flake .#windflower
+# 3. Edit hardware-configuration.nix for your machine
+# Generate: nixos-generate-config --show-hardware-config > nixos/config/hardware-configuration.nix
 
-# 4. Reboot
+# 4. Update flake hostname (optional)
+# Edit nixos/flake.nix: change "windflower" to your hostname
+
+# 5. Rebuild NixOS from repo
+cd nixos
+sudo nixos-rebuild switch --flake .#windflower  # or .#your-hostname
+
+# 6. Reboot
 sudo reboot
 ```
 
-## 🔧 Workflow sehari-hari
+## 🔧 Daily Workflow
 
-**Edit config:**
+**Edit configs:**
 ```bash
 cd ~/dotfiles
-# edit nixos/config/home.nix atau app config lain
-git add -A && git commit -m "feat: tambah package X"
+# Edit nixos/config/home.nix or any app config
+git add -A && git commit -m "feat: add package X"
 git push
 ```
 
@@ -59,32 +65,29 @@ cd ~/dotfiles/nixos
 sudo nixos-rebuild switch --flake .#windflower
 ```
 
-**Update inputs (nixpkgs, home-manager, dll):**
+**Update inputs (nixpkgs, home-manager, etc):**
 ```bash
 cd ~/dotfiles/nixos
 nix flake update
 sudo nixos-rebuild switch --flake .#windflower
 ```
 
-## ⚙️ Highlight
+## ⚙️ Features
 
-- **Serpantinum 2.2.6** — Wayland shell/bar (auto-install via flake), quickshell modules, matugen color sync
-- **Zen Browser** — default browser, monochrome theme
-- **Zed Editor** — settings + keybindings
-- **Dream Journey Cursor** — XCursor + Hyprcursor (auto-install via flake)
-- **TUI sync** — btop, micro, nvim, kitty follow serpantinum colors
-- **Qylock** — lockscreen theme available di flake (belum enabled, manual opt-in)
+- **Serpantinum 2.2.6** — Wayland shell/bar with quickshell modules and matugen color sync (auto-install via flake)
+- **Zen Browser** — Default browser with monochrome theme
+- **Zed Editor** — Custom settings and keybindings ([extension recommendations](ZED_EXTENSIONS.md))
+- **Dream Journey Cursor** — XCursor + Hyprcursor theme (auto-install via flake)
+- **TUI color sync** — btop, micro, nvim, and kitty automatically follow Serpantinum colors
+- **Qylock** — Lockscreen theme available in flake (opt-in, not enabled by default)
 
 ## 📝 Notes
 
-- `hardware-configuration.nix` **di-track** (per-machine tapi perlu buat bootstrap; edit manual kalau ganti hardware)
-- Secret files (`.env`, `auth.json`, `*credentials*`, `*.token`) di-gitignore — setup manual per mesin
-- Rebuild pertama: ~15 menit (download + compile)
+- **`hardware-configuration.nix` is tracked** (machine-specific but needed for bootstrap; edit manually if hardware changes)
+- **Secret files** (`.env`, `auth.json`, `*credentials*`, `*.token`) are gitignored — set them up manually per machine
+- **First rebuild** takes ~15 minutes (download + compile Nix packages)
+- **Symlinked configs** — app configs in `~/dotfiles/config/` are symlinked to `~/.config/` (edit repo, changes apply immediately)
 
 ---
 
-**Host:** windflower (NixOS 26.05)  
-**User:** flos  
-**WM:** Hyprland + Serpantinum  
-**Shell:** Fish  
-**Editor:** Zed, Micro
+**Stack:** NixOS 26.05 · Hyprland · Serpantinum · Fish · Zed · Kitty

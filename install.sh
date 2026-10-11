@@ -20,7 +20,7 @@ link() {
   fi
 }
 
-echo "=== app configs (home -> repo) ==="
+echo "=== Link app configs (home -> repo) ==="
 link config/fish/config.fish          "$HOME/.config/fish/config.fish"
 link config/zed/settings.json         "$HOME/.config/zed/settings.json"
 link config/zed/keymap.json           "$HOME/.config/zed/keymap.json"
@@ -32,8 +32,8 @@ link config/micro/settings.json       "$HOME/.config/micro/settings.json"
 link config/btop/btop.conf            "$HOME/.config/btop/btop.conf"
 
 echo ""
-echo "=== NixOS ==="
-echo "Rebuild langsung dari repo:"
+echo "=== NixOS rebuild ==="
+echo "Rebuild directly from repo:"
 echo "  cd $REPO/nixos && sudo nixos-rebuild switch --flake .#windflower"
 echo ""
-echo "Selesai. Kalau file baru ditambah ke repo, jalankan lagi script ini."
+echo "Done. If new files are added to the repo, run this script again."
