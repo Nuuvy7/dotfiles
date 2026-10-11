@@ -15,7 +15,7 @@ nixos/
     └── home.nix               # Home Manager (serpantinum, zed, zen browser, npm)
 
 config/
-├── fish/config.fish           # Shell (PATH fix untuk 9router)
+├── fish/config.fish           # Shell config
 ├── zed/                       # Editor (60+ HTML snippets)
 ├── serpantinum/settings.json  # Wayland shell (bar modules, wallpaper)
 ├── hypr/hyprland.conf         # WM
@@ -68,19 +68,18 @@ sudo nixos-rebuild switch --flake .#windflower
 
 ## ⚙️ Highlight
 
-- **Serpantinum 2.2.6** — bar, quickshell modules, matugen color sync
-- **9router** + **hermes-gateway** — systemd auto-start/restart, Discord 4-bot multiplexed
+- **Serpantinum 2.2.6** — Wayland shell/bar (auto-install via flake), quickshell modules, matugen color sync
 - **Zen Browser** — default browser, monochrome theme
 - **Zed Editor** — 60+ HTML snippets, auto-completion
-- **Dream Journey Cursor** — XCursor + Hyprcursor
-- **TUI sync** — btop, micro, nvim, kitty, hermes skin follow serpantinum colors
+- **Dream Journey Cursor** — XCursor + Hyprcursor (auto-install via flake)
+- **TUI sync** — btop, micro, nvim, kitty follow serpantinum colors
+- **Qylock** — lockscreen theme available di flake (belum enabled, manual opt-in)
 
 ## 📝 Notes
 
 - `hardware-configuration.nix` **di-track** (per-machine tapi perlu buat bootstrap; edit manual kalau ganti hardware)
 - Secret files (`.env`, `auth.json`, `*credentials*`, `*.token`) di-gitignore — setup manual per mesin
 - Rebuild pertama: ~15 menit (download + compile)
-- Theme taman Windflower: lifecycle notif gateway pakai 🌸🌙 konsisten
 
 ---
 
