@@ -75,7 +75,7 @@ sudo nixos-rebuild switch --flake .#windflower
 ## ⚙️ Features
 
 - **Serpantinum 2.2.6** — Wayland shell/bar with quickshell modules and matugen color sync (auto-install via flake)
-- **Zen Browser** — Default browser with monochrome theme
+- **Zen Browser** — Default browser
 - **Zed Editor** — Custom settings and keybindings ([extension recommendations](ZED_EXTENSIONS.md))
 - **Dream Journey Cursor** — XCursor + Hyprcursor theme (auto-install via flake)
 - **TUI color sync** — btop, micro, nvim, and kitty automatically follow Serpantinum colors
