@@ -38,6 +38,7 @@ in
     efiSupport = true;
     device = "nodev";
     useOSProber = true;
+    timeout = 30; # detik sebelum opsi atas dipilih otomatis
   };
 
   # NTFS mount untuk SSD deta (shared, NTFS) — sudah ada, dipertahankan.
@@ -406,6 +407,15 @@ in
     nodejs         # node + npm sistem-wide (buat npm install -g 9router dll)
     djXcursor      # Dream Journey XCursor theme (SDDM + apps)
     djHyprcursor   # Dream Journey Hyprcursor (.hlc untuk Hyprland)
+
+    # --- Cyber / CTF (kelas 11 — niat serius) ---
+    burpsuite      # web proxy (unfree, allowUnfree sudah on di flake)
+    binwalk        # firmware/embedded forensics
+    nmap ffuf sqlmap gobuster
+    seclists       # wordlist buat fuzzing/brute
+    hashcat john   # password cracking
+    wireshark
+    ghidra         # reverse engineering — ~2GB, hapus kalau berat
   ];
 
   # ===== AUR alternatif (catatan, tidak dieksekusi) =====
