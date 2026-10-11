@@ -16,7 +16,7 @@ nixos/
 
 config/
 ├── fish/config.fish           # Shell config
-├── zed/                       # Editor (60+ HTML snippets)
+├── zed/                       # Editor settings
 ├── serpantinum/settings.json  # Wayland shell (bar modules, wallpaper)
 ├── hypr/hyprland.conf         # WM
 ├── kitty/kitty.conf           # Terminal
@@ -70,7 +70,7 @@ sudo nixos-rebuild switch --flake .#windflower
 
 - **Serpantinum 2.2.6** — Wayland shell/bar (auto-install via flake), quickshell modules, matugen color sync
 - **Zen Browser** — default browser, monochrome theme
-- **Zed Editor** — 60+ HTML snippets, auto-completion
+- **Zed Editor** — settings + keybindings
 - **Dream Journey Cursor** — XCursor + Hyprcursor (auto-install via flake)
 - **TUI sync** — btop, micro, nvim, kitty follow serpantinum colors
 - **Qylock** — lockscreen theme available di flake (belum enabled, manual opt-in)
