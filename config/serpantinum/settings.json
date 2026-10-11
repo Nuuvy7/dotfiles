@@ -1,0 +1,207 @@
+{
+  "general": {
+    "language": "en",
+    "avatarPath": "",
+    "muteSfx": false,
+    "weatherInterval": 15,
+    "weatherUnit": "metric",
+    "location": {
+      "ip": "103.240.111.90",
+      "latitude": -10.16667,
+      "longitude": 123.58333,
+      "city": "Kupang",
+      "region": "East Nusa Tenggara",
+      "region_code": "NT",
+      "country_name": "Indonesia",
+      "country_code": "ID",
+      "postal": null,
+      "timezone": "Asia/Makassar",
+      "utc_offset": "+0800",
+      "currency": "IDR",
+      "languages": "id,en,nl,jv",
+      "asn": "AS58819",
+      "org": "PT Arsenet Global Solusi",
+      "source": "ipapi.co",
+      "updated_at": 1789544149
+    }
+  },
+  "syspanel": {
+    "clipExpandProgress": 0,
+    "clipExpanded": false,
+    "clipState": 1
+  },
+  "bar": {
+    "position": "top",
+    "width": 100,
+    "opacity": 71,
+    "style": "modular",
+    "time": {
+      "format": "HH:mm:ss"
+    },
+    "autohide": false,
+    "autohideTimeout": 1000,
+    "modules": {
+      "left": [
+        [
+          "left",
+          "workspaces"
+        ],
+        "media"
+      ],
+      "center": [
+        [
+          "timedate",
+          "weather"
+        ],
+        "info"
+      ],
+      "right": [
+        [
+          "wifi",
+          "bt",
+          "vol",
+          "bat",
+          "sysmon"
+        ]
+      ]
+    },
+    "distinctPills": false,
+    "workspaceCount": 5,
+    "groupColors": {
+      "g_kb": "#f4bd6e",
+      "g_timedate": "#d0d0d0",
+      "g_workspaces": "#e0e0e0"
+    },
+    "workspacesStyle": "pacman",
+    "timeStyle": "classic"
+  },
+  "theme": {
+    "fontFamily": "Adwaita Mono",
+    "borderRadius": 4,
+    "activePreset": "Obsidian",
+    "matugen": false,
+    "colors": {
+      "base": "#000000",
+      "blue": "#ffffff",
+      "crust": "#000000",
+      "green": "#ffffff",
+      "mantle": "#050505",
+      "maroon": "#808080",
+      "mauve": "#d0d0d0",
+      "overlay0": "#5a5a5a",
+      "overlay1": "#7a7a7a",
+      "overlay2": "#9a9a9a",
+      "peach": "#cccccc",
+      "pink": "#e0e0e0",
+      "red": "#a0a0a0",
+      "sapphire": "#e0e0e0",
+      "subtext0": "#a0a0a0",
+      "subtext1": "#c0c0c0",
+      "surface0": "#1a1a1a",
+      "surface1": "#2a2a2a",
+      "surface2": "#3a3a3a",
+      "teal": "#c0c0c0",
+      "text": "#ffffff",
+      "yellow": "#ffffff"
+    }
+  },
+  "idle": {
+    "enabled": true,
+    "actions": {
+      "dim": {
+        "id": "dim",
+        "timeout": 150,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      },
+      "dpms": {
+        "id": "dpms",
+        "timeout": 450,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      },
+      "lock": {
+        "id": "lock",
+        "timeout": 300,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      },
+      "suspend": {
+        "id": "suspend",
+        "timeout": 600,
+        "enabled": false,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      }
+    },
+    "manualInhibit": true
+  },
+  "notifications": {
+    "dnd": false,
+    "position": "top right",
+    "sound": true,
+    "soundFile": "/nix/store/iqky8271kd9nshxg3p22pvd4sh9biy0j-serpantinum-2.2.6/share/serpantinum/assets/sounds/notifications/Botanica.wav",
+    "horizontalPosition": 88,
+    "verticalPosition": 15,
+    "showEmptyGraphic": true
+  },
+  "display": {
+    "monitors": {
+      "eDP-1": {
+        "enabled": false,
+        "scale": 1
+      }
+    }
+  },
+  "wallpaperDir": "/home/flos/Pictures/Wallpapers",
+  "dock": {
+    "enabled": false,
+    "position": "bottom",
+    "onTop": true,
+    "elementSize": 44,
+    "floating": false,
+    "opacity": 100,
+    "exclusive": false,
+    "autohide": false,
+    "autohideTimeout": 1000,
+    "editing": false,
+    "apps": [],
+    "overrideBoundsCorrection": false,
+    "enableScrolling": false,
+    "visibleElements": 7,
+    "hoverScale": 120,
+    "cascadeScale": false
+  },
+  "launcher": {
+    "position": "center",
+    "width": 500,
+    "itemCount": 3,
+    "terminalCommand": "kitty -e",
+    "smartRanking": true
+  },
+  "osd": {
+    "horizontalPosition": 50,
+    "verticalPosition": 100,
+    "orientation": "horizontal",
+    "showCapsLock": true,
+    "showNumLock": true,
+    "showAirplane": true,
+    "attachToBar": true
+  }
+}
+

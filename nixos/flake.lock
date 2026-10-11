@@ -1,0 +1,223 @@
+{
+  "nodes": {
+    "dream-journey-cursor": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791628605,
+        "narHash": "sha256-wjQpsqgVcqQzKdyokPv6yo1Y0Xfdm7bDJCLE+tazNuA=",
+        "path": "/home/flos/Projects/clone/dream-journey-cursor",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/flos/Projects/clone/dream-journey-cursor",
+        "type": "path"
+      }
+    },
+    "fetch": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791625626,
+        "narHash": "sha256-a+i3EAK+IG4eESRxR6cVhMhkor2jszTYiVyFPtz9FjY=",
+        "path": "/home/flos/Projects/clone/fetch",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/flos/Projects/clone/fetch",
+        "type": "path"
+      }
+    },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767039857,
+        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
+        "owner": "NixOS",
+        "repo": "flake-compat",
+        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790996401,
+        "narHash": "sha256-f+kOxEmOUnQazVAmGg0i8hzwgd1kX/geY+k/Dpheye8=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "db7d5e2332710f5abb088f6b5de927d7f9511b35",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-26.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1791426274,
+        "narHash": "sha256-MWhktfFtFE8Jl7bf9Pkp7TR5MSdYCjCswSo0Gkb4ywc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "7c8764b7c7b09b34f632464276218ef9090eaa11",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1791456040,
+        "narHash": "sha256-H83yz/do+hjOO0uujHyH8RgtIQP2v7Mw+cLwcZK/xKc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "e7439b6b14ad3cc35d05608ebca9bce01a25f5f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "qylock": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791621051,
+        "narHash": "sha256-uX7YW3OQ9br5N70fB9gQh+23KWchgD02mulRMeOuqnc=",
+        "path": "/home/flos/Projects/clone/qylock",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/flos/Projects/clone/qylock",
+        "type": "path"
+      }
+    },
+    "root": {
+      "inputs": {
+        "dream-journey-cursor": "dream-journey-cursor",
+        "fetch": "fetch",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs",
+        "qylock": "qylock",
+        "serpantinum": "serpantinum",
+        "zen-browser": "zen-browser"
+      }
+    },
+    "serpantinum": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2",
+        "serpantinum-wallpapers": "serpantinum-wallpapers"
+      },
+      "locked": {
+        "lastModified": 1791621695,
+        "narHash": "sha256-8gHxSmCjwtFgpVnTx8lHMdoGdEfU4kvIANrP4u9/eDY=",
+        "owner": "ilyamiro",
+        "repo": "serpantinum",
+        "rev": "c28e782b204bb576c5b28699449633c83894faf1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ilyamiro",
+        "repo": "serpantinum",
+        "type": "github"
+      }
+    },
+    "serpantinum-wallpapers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789127588,
+        "narHash": "sha256-L3xRtDXH1ERwVIP+ztT6qn7YYh3aHpfpy1/nvyjvKIc=",
+        "owner": "ilyamiro",
+        "repo": "shell-wallpapers",
+        "rev": "4f5994aff60403f88d3f0378e6f9c9d0a00b0289",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ilyamiro",
+        "repo": "shell-wallpapers",
+        "type": "github"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791626470,
+        "narHash": "sha256-WLvxHEtHDJSastpcx2SbglVlJzudX7mQ+CXBz1M/7vc=",
+        "path": "/home/flos/Projects/clone/zen-browser-flake",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/flos/Projects/clone/zen-browser-flake",
+        "type": "path"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

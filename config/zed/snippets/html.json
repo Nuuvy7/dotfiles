@@ -1,0 +1,447 @@
+{
+  "HTML5 boilerplate": {
+    "prefix": "html5",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"${1:en}\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>${2:Document}</title>",
+      "</head>",
+      "<body>",
+      "  $0",
+      "</body>",
+      "</html>"
+    ],
+    "description": "HTML5 boilerplate"
+  },
+
+  "div": {
+    "prefix": "div",
+    "body": ["<div class=\"${1:class}\">$0</div>"],
+    "description": "div with class"
+  },
+  "div empty": {
+    "prefix": "div.",
+    "body": ["<div class=\"${1:class}\"></div>"],
+    "description": "div with class (empty)"
+  },
+  "span": {
+    "prefix": "span",
+    "body": ["<span class=\"${1:class}\">$0</span>"],
+    "description": "span with class"
+  },
+
+  "h1": {
+    "prefix": "h1",
+    "body": ["<h1>${1:text}</h1>"],
+    "description": "h1 heading"
+  },
+  "h2": {
+    "prefix": "h2",
+    "body": ["<h2>${1:text}</h2>"],
+    "description": "h2 heading"
+  },
+  "h3": {
+    "prefix": "h3",
+    "body": ["<h3>${1:text}</h3>"],
+    "description": "h3 heading"
+  },
+  "h4": {
+    "prefix": "h4",
+    "body": ["<h4>${1:text}</h4>"],
+    "description": "h4 heading"
+  },
+  "h5": {
+    "prefix": "h5",
+    "body": ["<h5>${1:text}</h5>"],
+    "description": "h5 heading"
+  },
+  "h6": {
+    "prefix": "h6",
+    "body": ["<h6>${1:text}</h6>"],
+    "description": "h6 heading"
+  },
+
+  "paragraph": {
+    "prefix": "p",
+    "body": ["<p>${1:text}</p>"],
+    "description": "paragraph"
+  },
+  "br": {
+    "prefix": "br",
+    "body": ["<br>"],
+    "description": "line break"
+  },
+  "hr": {
+    "prefix": "hr",
+    "body": ["<hr>"],
+    "description": "horizontal rule"
+  },
+
+  "strong": {
+    "prefix": "strong",
+    "body": ["<strong>${1:text}</strong>"],
+    "description": "bold (strong)"
+  },
+  "em": {
+    "prefix": "em",
+    "body": ["<em>${1:text}</em>"],
+    "description": "italic (emphasis)"
+  },
+  "b": {
+    "prefix": "b",
+    "body": ["<b>${1:text}</b>"],
+    "description": "bold"
+  },
+  "i": {
+    "prefix": "i",
+    "body": ["<i>${1:text}</i>"],
+    "description": "italic"
+  },
+  "u": {
+    "prefix": "u",
+    "body": ["<u>${1:text}</u>"],
+    "description": "underline"
+  },
+  "mark": {
+    "prefix": "mark",
+    "body": ["<mark>${1:text}</mark>"],
+    "description": "highlighted text"
+  },
+  "small": {
+    "prefix": "small",
+    "body": ["<small>${1:text}</small>"],
+    "description": "small text"
+  },
+  "sub": {
+    "prefix": "sub",
+    "body": ["<sub>${1:text}</sub>"],
+    "description": "subscript"
+  },
+  "sup": {
+    "prefix": "sup",
+    "body": ["<sup>${1:text}</sup>"],
+    "description": "superscript"
+  },
+  "code": {
+    "prefix": "code",
+    "body": ["<code>${1:code}</code>"],
+    "description": "inline code"
+  },
+  "pre": {
+    "prefix": "pre",
+    "body": ["<pre><code>${1:code}</code></pre>"],
+    "description": "preformatted code block"
+  },
+  "blockquote": {
+    "prefix": "bq",
+    "body": ["<blockquote>$0</blockquote>"],
+    "description": "blockquote"
+  },
+  "abbr": {
+    "prefix": "abbr",
+    "body": ["<abbr title=\"${1:full text}\">${2:abbr}</abbr>"],
+    "description": "abbreviation with title"
+  },
+  "del": {
+    "prefix": "del",
+    "body": ["<del>${1:text}</del>"],
+    "description": "deleted text"
+  },
+  "ins": {
+    "prefix": "ins",
+    "body": ["<ins>${1:text}</ins>"],
+    "description": "inserted text"
+  },
+  "kbd": {
+    "prefix": "kbd",
+    "body": ["<kbd>${1:key}</kbd>"],
+    "description": "keyboard input"
+  },
+
+  "a": {
+    "prefix": "a",
+    "body": ["<a href=\"${1:url}\">${2:link text}</a>"],
+    "description": "anchor link"
+  },
+  "a new tab": {
+    "prefix": "anew",
+    "body": ["<a href=\"${1:url}\" target=\"_blank\" rel=\"noopener noreferrer\">${2:link text}</a>"],
+    "description": "anchor link (new tab)"
+  },
+
+  "img": {
+    "prefix": "img",
+    "body": ["<img src=\"${1:src}\" alt=\"${2:description}\">"],
+    "description": "image with alt"
+  },
+  "figure": {
+    "prefix": "figure",
+    "body": [
+      "<figure>",
+      "  <img src=\"${1:src}\" alt=\"${2:description}\">",
+      "  <figcaption>${3:caption}</figcaption>",
+      "</figure>"
+    ],
+    "description": "figure with caption"
+  },
+  "picture": {
+    "prefix": "picture",
+    "body": [
+      "<picture>",
+      "  <source srcset=\"${1:src.webp}\" type=\"image/webp\">",
+      "  <img src=\"${2:src.jpg}\" alt=\"${3:description}\">",
+      "</picture>"
+    ],
+    "description": "responsive picture element"
+  },
+
+  "ul": {
+    "prefix": "ul",
+    "body": ["<ul>", "  <li>${1:item}</li>", "  $0", "</ul>"],
+    "description": "unordered list"
+  },
+  "ol": {
+    "prefix": "ol",
+    "body": ["<ol>", "  <li>${1:item}</li>", "  $0", "</ol>"],
+    "description": "ordered list"
+  },
+  "li": {
+    "prefix": "li",
+    "body": ["<li>${1:item}</li>"],
+    "description": "list item"
+  },
+  "dl": {
+    "prefix": "dl",
+    "body": [
+      "<dl>",
+      "  <dt>${1:term}</dt>",
+      "  <dd>${2:description}</dd>",
+      "</dl>"
+    ],
+    "description": "description list"
+  },
+
+  "nav": {
+    "prefix": "nav",
+    "body": ["<nav>", "  $0", "</nav>"],
+    "description": "navigation"
+  },
+  "header": {
+    "prefix": "header",
+    "body": ["<header>", "  $0", "</header>"],
+    "description": "header"
+  },
+  "footer": {
+    "prefix": "footer",
+    "body": ["<footer>", "  $0", "</footer>"],
+    "description": "footer"
+  },
+  "main": {
+    "prefix": "main",
+    "body": ["<main>", "  $0", "</main>"],
+    "description": "main content"
+  },
+  "section": {
+    "prefix": "section",
+    "body": ["<section>", "  $0", "</section>"],
+    "description": "section"
+  },
+  "article": {
+    "prefix": "article",
+    "body": ["<article>", "  $0", "</article>"],
+    "description": "article"
+  },
+  "aside": {
+    "prefix": "aside",
+    "body": ["<aside>", "  $0", "</aside>"],
+    "description": "aside (sidebar)"
+  },
+
+  "form": {
+    "prefix": "form",
+    "body": [
+      "<form action=\"${1:action}\" method=\"${2:post}\">",
+      "  $0",
+      "</form>"
+    ],
+    "description": "form element"
+  },
+  "input": {
+    "prefix": "input",
+    "body": ["<input type=\"${1:text}\" name=\"${2:name}\" placeholder=\"${3:placeholder}\">"],
+    "description": "input field"
+  },
+  "input email": {
+    "prefix": "inputemail",
+    "body": ["<input type=\"email\" name=\"${1:email}\" placeholder=\"${2:your@email.com}\">"],
+    "description": "email input"
+  },
+  "input password": {
+    "prefix": "inputpw",
+    "body": ["<input type=\"password\" name=\"${1:password}\" placeholder=\"${2:Password}\">"],
+    "description": "password input"
+  },
+  "input checkbox": {
+    "prefix": "inputcb",
+    "body": ["<input type=\"checkbox\" name=\"${1:name}\" id=\"${2:id}\">"],
+    "description": "checkbox input"
+  },
+  "input radio": {
+    "prefix": "inputradio",
+    "body": ["<input type=\"radio\" name=\"${1:group}\" id=\"${2:id}\">"],
+    "description": "radio input"
+  },
+  "input submit": {
+    "prefix": "inputsubmit",
+    "body": ["<input type=\"submit\" value=\"${1:Submit}\">"],
+    "description": "submit button (input)"
+  },
+  "textarea": {
+    "prefix": "textarea",
+    "body": ["<textarea name=\"${1:name}\" rows=\"${2:4}\" cols=\"${3:50}\">$0</textarea>"],
+    "description": "textarea"
+  },
+  "select": {
+    "prefix": "select",
+    "body": [
+      "<select name=\"${1:name}\">",
+      "  <option value=\"${2:value}\">${3:Option}</option>",
+      "  $0",
+      "</select>"
+    ],
+    "description": "select dropdown"
+  },
+  "label": {
+    "prefix": "label",
+    "body": ["<label for=\"${1:id}\">${2:text}</label>"],
+    "description": "label for input"
+  },
+  "button": {
+    "prefix": "button",
+    "body": ["<button type=\"${1:button}\">${2:text}</button>"],
+    "description": "button"
+  },
+  "button submit": {
+    "prefix": "bsubmit",
+    "body": ["<button type=\"submit\">${1:Submit}</button>"],
+    "description": "submit button"
+  },
+  "fieldset": {
+    "prefix": "fieldset",
+    "body": [
+      "<fieldset>",
+      "  <legend>${1:title}</legend>",
+      "  $0",
+      "</fieldset>"
+    ],
+    "description": "fieldset with legend"
+  },
+
+  "table": {
+    "prefix": "table",
+    "body": [
+      "<table>",
+      "  <thead>",
+      "    <tr>",
+      "      <th>${1:Header}</th>",
+      "      $0",
+      "    </tr>",
+      "  </thead>",
+      "  <tbody>",
+      "    <tr>",
+      "      <td>${2:Cell}</td>",
+      "    </tr>",
+      "  </tbody>",
+      "</table>"
+    ],
+    "description": "full table structure"
+  },
+  "tr": {
+    "prefix": "tr",
+    "body": ["<tr>", "  <td>${1:cell}</td>", "</tr>"],
+    "description": "table row"
+  },
+  "td": {
+    "prefix": "td",
+    "body": ["<td>${1:cell}</td>"],
+    "description": "table cell"
+  },
+  "th": {
+    "prefix": "th",
+    "body": ["<th>${1:header}</th>"],
+    "description": "table header cell"
+  },
+  "caption": {
+    "prefix": "caption",
+    "body": ["<caption>${1:text}</caption>"],
+    "description": "table caption"
+  },
+
+  "video": {
+    "prefix": "video",
+    "body": [
+      "<video src=\"${1:src.mp4}\" controls>",
+      "  Your browser does not support the video tag.",
+      "</video>"
+    ],
+    "description": "video player"
+  },
+  "audio": {
+    "prefix": "audio",
+    "body": [
+      "<audio src=\"${1:src.mp3}\" controls>",
+      "  Your browser does not support the audio tag.",
+      "</audio>"
+    ],
+    "description": "audio player"
+  },
+  "source": {
+    "prefix": "source",
+    "body": ["<source src=\"${1:src}\" type=\"${2:type}\">"],
+    "description": "media source"
+  },
+  "iframe": {
+    "prefix": "iframe",
+    "body": ["<iframe src=\"${1:url}\" width=\"${2:560}\" height=\"${3:315}\" title=\"${4:description}\"></iframe>"],
+    "description": "iframe embed"
+  },
+
+  "script external": {
+    "prefix": "script",
+    "body": ["<script src=\"${1:src.js}\"></script>"],
+    "description": "external script"
+  },
+  "script inline": {
+    "prefix": "scripti",
+    "body": ["<script>", "  $0", "</script>"],
+    "description": "inline script"
+  },
+  "link css": {
+    "prefix": "linkcss",
+    "body": ["<link rel=\"stylesheet\" href=\"${1:styles.css}\">"],
+    "description": "external stylesheet link"
+  },
+  "style block": {
+    "prefix": "style",
+    "body": ["<style>", "  $0", "</style>"],
+    "description": "inline style block"
+  },
+  "meta viewport": {
+    "prefix": "metavp",
+    "body": ["<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"],
+    "description": "viewport meta tag"
+  },
+  "meta charset": {
+    "prefix": "metacharset",
+    "body": ["<meta charset=\"UTF-8\">"],
+    "description": "charset meta tag"
+  },
+  "meta description": {
+    "prefix": "metadesc",
+    "body": ["<meta name=\"description\" content=\"${1:description}\">"],
+    "description": "description meta tag"
+  }
+}

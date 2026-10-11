@@ -1,0 +1,26 @@
+# Secrets — JANGAN PERNAH commit
+*.env
+.env*
+*credentials*
+*.token
+*.key
+*.pem
+*.sqlite
+service.json
+auth.json
+cli-secret
+
+# System/machine specific
+/etc/
+*.backup-*
+*.bak
+
+# Runtime/cache
+*.log
+*.tmp
+.cache/
+node_modules/
+__pycache__/
+
+# NixOS generated (per-machine, rebuild from hardware probe)
+hardware-configuration.nix

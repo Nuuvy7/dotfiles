@@ -1,0 +1,123 @@
+{
+  "agent": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "gpt-6-luna",
+      "enable_thinking": true,
+      "effort": "medium"
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "base_keymap": "VSCode",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "buffer_font_family": "JetBrains Mono",
+  "theme": "Ayu Dark",
+  "show_completions_on_input": true,
+  "completions": {
+    "lsp": true,
+    "words": true,
+    "words_min_length": 3
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true
+  },
+  "format_on_save": "on",
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
+  "tab_size": 2,
+  "hard_tabs": false,
+  "soft_wrap": "editor_width",
+  "autosave": "on_focus_change",
+  "restore_on_startup": "last_workspace",
+  "close_on_file_delete": true,
+  "confirm_quit": false,
+  "show_whitespaces": "selection",
+  "scroll_beyond_last_line": "one_page",
+  "vertical_scroll_margin": 3,
+  "relative_line_numbers": "enabled",
+  "cursor_blink": true,
+  "gutter": {
+    "line_numbers": true,
+    "runnables": true,
+    "folds": true
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/node_modules",
+    "**/target",
+    "**/dist",
+    "**/build"
+  ],
+  "tabs": {
+    "git_status": true,
+    "file_icons": true
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false
+  },
+  "preview_tabs": {
+    "enabled": true,
+    "enable_preview_from_file_finder": true
+  },
+  "project_panel": {
+    "dock": "left",
+    "default_width": 240,
+    "entry_spacing": "comfortable",
+    "auto_reveal_entries": true
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 500
+    }
+  },
+  "terminal": {
+    "font_family": "JetBrains Mono",
+    "font_size": 14,
+    "line_height": "comfortable",
+    "copy_on_select": false
+  },
+  "languages": {
+    "Nix": {
+      "tab_size": 2
+    },
+    "Python": {
+      "tab_size": 4
+    },
+    "JavaScript": {
+      "tab_size": 2
+    },
+    "TypeScript": {
+      "tab_size": 2
+    },
+    "JSON": {
+      "tab_size": 2
+    },
+    "JSONC": {
+      "tab_size": 2
+    }
+  }
+}

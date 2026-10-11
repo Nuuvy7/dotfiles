@@ -1,0 +1,21 @@
+// Zed keymap — QoL tambahan (di atas base VSCode)
+[
+  {
+    "bindings": {
+      "ctrl-k": "editor::GoToHunk",           // jump antar git hunk
+      "ctrl-shift-r": "editor::Rename",        // rename symbol (LSP)
+      "f2": "editor::Rename",
+      "ctrl-shift-up": "editor::AddSelectionAbove",
+      "ctrl-shift-down": "editor::AddSelectionBelow",
+      "alt-up": "editor::MoveLineUp",
+      "alt-down": "editor::MoveLineDown",
+      "ctrl-shift-k": "editor::DeleteLine",
+      "ctrl-g": "go_to_line::Toggle",
+      "ctrl-shift-f": "project_search::ToggleFocus",
+      "ctrl-shift-p": "command_palette::Toggle",
+      "ctrl-shift-e": "project_panel::ToggleFocus",
+      "ctrl-`": "terminal_panel::ToggleFocus",
+      "ctrl-shift-m": "editor::ToggleDiagnostics"  // show problems
+    }
+  }
+]
