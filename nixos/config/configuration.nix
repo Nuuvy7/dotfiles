@@ -387,6 +387,7 @@ in
     # --- CLI / tools baru (dari Arch) ---
     nano neovim tmux unzip
     fd fzf jq bc socat
+    himalaya                     # email CLI — cron cek-tugas-classroom (backup config: ~/.config/himalaya/config.toml)
     btop htop
     hyfetch                       # neofetch sudah dihapus upstream, hyfetch penggantinya
     p7zip
