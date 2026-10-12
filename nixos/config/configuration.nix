@@ -395,6 +395,12 @@ in
         pdo_mysql
         pdo_pgsql
         pdo_sqlite
+        session
+        mbstring
+        openssl
+        tokenizer
+        ctype
+        filter
       ];
     };
     pools.db = {
