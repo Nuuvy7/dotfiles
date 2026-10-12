@@ -351,12 +351,26 @@ in
     dockerCompat = true;
   };
 
+  # ===== Database (kelas DB) =====
+  # MySQL 8.4 server + client, PostgreSQL 17 server + client, DBeaver GUI.
+  # Semua service auto-start pas boot; data disimpan di /var/lib/{mysql,postgresql}.
+  services.mysql = {
+    enable = true;
+    package = pkgs.mysql84;
+  };
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_17;
+  };
+
   # ===== User =====
   users.users.flos = {
     isNormalUser = true;
     extraGroups = [
       "wheel" "networkmanager"
       "video" "audio" "input" "podman"
+      "mysql" "postgres"
     ];
     shell = pkgs.fish;
   };
@@ -418,6 +432,9 @@ in
     nodejs         # node + npm sistem-wide (buat npm install -g 9router dll)
     djXcursor      # Dream Journey XCursor theme (SDDM + apps)
     djHyprcursor   # Dream Journey Hyprcursor (.hlc untuk Hyprland)
+
+    # --- Database GUI (kelas DB) ---
+    dbeaver-bin    # GUI universal: MySQL + PostgreSQL + SQLite (paling enak buat belajar)
 
     # --- Cyber / CTF (kelas 11 — niat serius) ---
     burpsuite      # web proxy (unfree, allowUnfree sudah on di flake)
