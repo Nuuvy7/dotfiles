@@ -364,6 +364,55 @@ in
     package = pkgs.postgresql_17;
   };
 
+  # ===== Web stack buat belajar DB (pengganti XAMPP) =====
+  # Apache + PHP 8.3 (dengan mysqli/pdo_mysql/pdo_pgsql) + Adminer
+  # (pengganti phpMyAdmin — dihapus dari nixpkgs 26.05).
+  # phpMyAdmin akses: http://localhost:8080 (setelah rebuild).
+  services.httpd = {
+    enable = true;
+    adminAddr = "flos@localhost";
+    extraModules = [ "proxy_fcgi" ];
+    virtualHosts."db.belajar.local" = {
+      documentRoot = "/var/www";
+      extraConfig = ''
+        <Directory "/var/www">
+          Options FollowSymLinks Indexes
+          AllowOverride None
+          Require all granted
+          DirectoryIndex adminer.php
+          <FilesMatch \.php$>
+            SetHandler "proxy:unix:/run/phpfpm/db.sock|fcgi://localhost/"
+          </FilesMatch>
+        </Directory>
+      '';
+    };
+  };
+
+  services.phpfpm = {
+    phpPackage = pkgs.php83.buildEnv {
+      extensions = { all, ... }: with all; [
+        mysqli
+        pdo_mysql
+        pdo_pgsql
+        pdo_sqlite
+      ];
+    };
+    pools.db = {
+      user = "flos";
+      group = "users";
+      settings = {
+        "listen.owner" = "flos";
+        "listen.group" = "wwwrun";
+        "listen.mode" = "0660";
+        "pm" = "dynamic";
+        "pm.max_children" = 5;
+        "pm.start_servers" = 2;
+        "pm.min_spare_servers" = 1;
+        "pm.max_spare_servers" = 3;
+      };
+    };
+  };
+
   # ===== User =====
   users.users.flos = {
     isNormalUser = true;
