@@ -69,6 +69,16 @@ in
     auto-optimise-store = true;
   };
 
+  # Nix GC otomatis: mingguan, buang store path nggak kepake +
+  # generasi >7 hari. NixOS default nggak auto-GC; dry-run nix-collect-garbage
+  # udah kelihatan ~1138 path bisa dibuang, jadi lama-lama numpuk kalau
+  # nggak dikasih timer.
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   # ===== Networking =====
   networking.hostName = "windflower"; # hostname dari config pindahrumah
   networking.networkmanager.enable = true;
