@@ -427,6 +427,7 @@ in
     # vivaldi dihapus (user nggak cocok).
     vim wget kitty fastfetch wofi git curl micro yazi starship
     gparted file fuzzel
+    chromium                    # browser buat profil/farming & backup
 
     # --- CLI / tools baru (dari Arch) ---
     nano neovim tmux unzip
