@@ -20,14 +20,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1791625626,
-        "narHash": "sha256-a+i3EAK+IG4eESRxR6cVhMhkor2jszTYiVyFPtz9FjY=",
-        "path": "/home/flos/Projects/clone/fetch",
-        "type": "path"
+        "lastModified": 1791855008,
+        "narHash": "sha256-hgoTIBD2pvZDJxefMz+g8ALs4lqsMHOPHH4wwiomsaA=",
+        "owner": "areofyl",
+        "repo": "fetch",
+        "rev": "e3087810e2a131ed4093440e783ac96a101ad806",
+        "type": "github"
       },
       "original": {
-        "path": "/home/flos/Projects/clone/fetch",
-        "type": "path"
+        "owner": "areofyl",
+        "repo": "fetch",
+        "type": "github"
       }
     },
     "flake-compat": {
@@ -126,14 +129,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1791621051,
-        "narHash": "sha256-uX7YW3OQ9br5N70fB9gQh+23KWchgD02mulRMeOuqnc=",
-        "path": "/home/flos/Projects/clone/qylock",
-        "type": "path"
+        "lastModified": 1789360700,
+        "narHash": "sha256-ELHBl+9ueNJhoNYRioSIHb/K7f+SNsesG/+X5ijA+NA=",
+        "owner": "Darkkal44",
+        "repo": "qylock",
+        "rev": "f6561e2ceae33f26e5e660742a5df2f725cbe514",
+        "type": "github"
       },
       "original": {
-        "path": "/home/flos/Projects/clone/qylock",
-        "type": "path"
+        "owner": "Darkkal44",
+        "repo": "qylock",
+        "type": "github"
       }
     },
     "root": {
@@ -207,14 +213,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1791626470,
-        "narHash": "sha256-WLvxHEtHDJSastpcx2SbglVlJzudX7mQ+CXBz1M/7vc=",
-        "path": "/home/flos/Projects/clone/zen-browser-flake",
-        "type": "path"
+        "lastModified": 1791961831,
+        "narHash": "sha256-1Wmx50qG3+R7nWcqRhuOhqm16e+g6nGzu77WBdagBUw=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "d98522a05b8a63509a1e649b0df3fadacd0e8faf",
+        "type": "github"
       },
       "original": {
-        "path": "/home/flos/Projects/clone/zen-browser-flake",
-        "type": "path"
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "type": "github"
       }
     }
   },

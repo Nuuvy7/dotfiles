@@ -1,4 +1,4 @@
-{ serpantinum, zen-browser, dream-journey-cursor, pkgs, ... }:
+{ serpantinum, zen-browser, dream-journey-cursor, pkgs, username ? "flos", ... }:
 
 {
   imports = [
@@ -8,8 +8,8 @@
   ];
 
   # ===== Identitas user =====
-  home.username = "flos";
-  home.homeDirectory = "/home/flos";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "26.05";
 
   # Biar Home Manager mengurus dasar-dasarnya.

@@ -6,7 +6,7 @@
 # disesuaikan untuk nixpkgs 26.05. Yang sudah ada (mount NTFS deta, nix-ld, kernel
 # latest, grub OSProber, stateVersion) TIDAK ditimpa — hanya ditambah yang belum ada.
 
-{ config, lib, pkgs, dream-journey-cursor, ... }:
+{ config, lib, pkgs, dream-journey-cursor, hostname ? "windflower", username ? "flos", ... }:
 
 let
   # Dream Journey cursor theme (XCursor buat SDDM + apps, Hyprcursor buat Hyprland).
@@ -44,7 +44,11 @@ in
   # NTFS mount untuk SSD deta (shared, NTFS) — sudah ada, dipertahankan.
   boot.supportedFilesystems = [ "ntfs" ];
 
-  fileSystems."/home/flos/deta" = {
+  # NOTE: mount NTFS SSD deta (UUID disk flos) — di-nofail+timeout biar
+  # nggak blocking boot kalau disk nggak kepasang. Hapus blok ini kalau
+  # mesin ini bukan punya flos / SSD-nya beda.
+  # UUID disk: lsblk -o NAME,UUID,MOUNTPOINT
+  fileSystems."/home/${username}/deta" = {
     device = "/dev/disk/by-uuid/B12887EDA87FC161";
     fsType = "ntfs";
     options = [
@@ -80,7 +84,7 @@ in
   };
 
   # ===== Networking =====
-  networking.hostName = "windflower"; # hostname dari config pindahrumah
+  networking.hostName = hostname; # override: NIXOS_HOSTNAME=myhost sudo -E nixos-rebuild switch --flake .#windflower --impure
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
 
@@ -370,7 +374,7 @@ in
   # phpMyAdmin akses: http://localhost:8080 (setelah rebuild).
   services.httpd = {
     enable = true;
-    adminAddr = "flos@localhost";
+    adminAddr = "${username}@localhost";
     extraModules = [ "proxy_fcgi" ];
     virtualHosts."db.belajar.local" = {
       documentRoot = "/var/www";
@@ -404,10 +408,10 @@ in
       ];
     };
     pools.db = {
-      user = "flos";
+      user = username;
       group = "users";
       settings = {
-        "listen.owner" = "flos";
+        "listen.owner" = username;
         "listen.group" = "wwwrun";
         "listen.mode" = "0660";
         "pm" = "dynamic";
@@ -420,7 +424,7 @@ in
   };
 
   # ===== User =====
-  users.users.flos = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
       "wheel" "networkmanager"
