@@ -133,7 +133,7 @@ sudo nixos-rebuild switch --flake .#windflower
 ## Included Components
 
 - Hyprland with UWSM and Wayland portals
-- Serpantinum shell (Quickshell-based) with matugen color sync
+- Serpantinum shell (Quickshell-based)
 - SDDM with Qylock theme
 - Zen Browser as default browser
 - Zed editor, Fish shell, Kitty terminal
