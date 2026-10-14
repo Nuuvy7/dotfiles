@@ -6,25 +6,8 @@
 # disesuaikan untuk nixpkgs 26.05. Yang sudah ada (mount NTFS deta, nix-ld, kernel
 # latest, grub OSProber, stateVersion) TIDAK ditimpa — hanya ditambah yang belum ada.
 
-{ config, lib, pkgs, dream-journey-cursor, hostname ? "windflower", username ? "flos", ... }:
+{ config, lib, pkgs, hostname ? "windflower", username ? "flos", ... }:
 
-let
-  # Dream Journey cursor theme (XCursor buat SDDM + apps, Hyprcursor buat Hyprland).
-  # Source: file dari Downloads (Umamusume cursor pack v1.9).
-  # Nama folder dikasih bersih (tanpa spasi/kurung) biar XCURSOR_THEME reliable.
-  djThemeName = "pixloen-dream-journey";
-  djXcursor = pkgs.runCommand "dream-journey-xcursor" { } ''
-    mkdir -p $out/share/icons/${djThemeName}
-    cp -r ${dream-journey-cursor}/cursors $out/share/icons/${djThemeName}/
-    cp ${dream-journey-cursor}/index.theme $out/share/icons/${djThemeName}/
-    # Fix nama di index.theme biar cocok sama folder.
-    sed -i "s|^Name=.*|Name=${djThemeName}|" $out/share/icons/${djThemeName}/index.theme
-  '';
-  djHyprcursor = pkgs.runCommand "dream-journey-hyprcursor" { } ''
-    mkdir -p $out/share/hyprcursors
-    cp ${dream-journey-cursor}/hyprcursors/*.hlc $out/share/hyprcursors/
-  '';
-in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -121,12 +104,6 @@ in
   # tanpa set manual. Kalau app bandel, tinggal restart app-nya.
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
-    # Dream Journey cursor (system-level, biar SDDM + semua app baca).
-    XCURSOR_THEME = "pixloen-dream-journey";
-    XCURSOR_SIZE = "24";
-    # Hyprland pakai hyprcursor (.hlc).
-    HYPRCURSOR_THEME = "pixloen-dream-journey";
-    HYPRCURSOR_SIZE = "24";
   };
   qt = {
     enable = true;
@@ -136,33 +113,9 @@ in
   };
 
   # ===== Display manager: SDDM (Wayland) =====
-  # Catatan: di nixpkgs 26.05 SDDM pindah ke services.displayManager.sddm
-  # (dulu services.sddm). Sistem ini sekarang jalan Hyprland langsung
-  # (manual start, tanpa DM). Kalau tidak mau DM otomatis, set enable = false.
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    # NOTE: compositorCommand weston --shell=fullscreen dicoba tapi bikin
-    # blackscreen sama greeter qylock — di-revert ke default (weston kiosk).
-    # Cursor invisible di SDDM masih open issue (kiosk shell nggak expose pointer).
-  };
-
-  # ===== SDDM cursor fix =====
-  # NOTE: percobaan fix cursor invisible di SDDM:
-  # - Tema cursor Dream Journey (XCursor) udah kepasang di /share/icons ✓
-  # - XCURSOR_THEME udah ke-set di service display-manager (biar SDDM baca) ✓
-  # - Tapi weston --shell=kiosk (compositor default SDDM) NYEMBUNYIIN pointer,
-  #   jadi cursor tetap nggak muncul. Ini karakteristik kiosk shell, bukan tema.
-  # - Percobaan ganti ke --shell=fullscreen → blackscreen (greeter qylock
-  #   nggak kompatibel). Di-revert.
-  # - Opsi lain yang belum dicoba: compositor lain (cage/drm), atau terima
-  #   SDDM nggak ada cursor (desktop udah ada Dream Journey).
-  systemd.services.display-manager.serviceConfig = {
-    Environment = [
-      "XCURSOR_THEME=pixloen-dream-journey"
-      "XCURSOR_SIZE=24"
-      "XCURSOR_PATH=/run/current-system/sw/share/icons"
-    ];
   };
 
   # ===== Notifikasi: dunst =====
@@ -489,8 +442,6 @@ in
     pulseaudio      # pactl (client) — serpantinum screenshot butuh ini (mute/unmute shutter sound). Pipewire yang handle audio, pactl cuma client.
     areofyl-fetch  # animated 3D fetch tool (overlay dari flake fetch)
     nodejs         # node + npm sistem-wide (buat npm install -g 9router dll)
-    djXcursor      # Dream Journey XCursor theme (SDDM + apps)
-    djHyprcursor   # Dream Journey Hyprcursor (.hlc untuk Hyprland)
 
     # --- Database GUI (kelas DB) ---
     dbeaver-bin    # GUI universal: MySQL + PostgreSQL + SQLite (paling enak buat belajar)

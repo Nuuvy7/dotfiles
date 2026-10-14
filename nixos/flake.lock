@@ -1,18 +1,5 @@
 {
   "nodes": {
-    "dream-journey-cursor": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1791628605,
-        "narHash": "sha256-wjQpsqgVcqQzKdyokPv6yo1Y0Xfdm7bDJCLE+tazNuA=",
-        "path": "/home/flos/Projects/clone/dream-journey-cursor",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/flos/Projects/clone/dream-journey-cursor",
-        "type": "path"
-      }
-    },
     "fetch": {
       "inputs": {
         "nixpkgs": [
@@ -144,7 +131,6 @@
     },
     "root": {
       "inputs": {
-        "dream-journey-cursor": "dream-journey-cursor",
         "fetch": "fetch",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",

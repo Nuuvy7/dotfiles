@@ -48,18 +48,10 @@ sudo nixos-generate-config --show-hardware-config > nixos/config/hardware-config
 ```
 
 ### 3. Set hostname + username
-Edit `nixos/flake.nix` specialArgs:
+Edit `nixos/flake.nix` di bagian `let`:
 ```nix
-specialArgs = {
-  hostname = "nama-mesin-kamu";   # misal "laptop-budi"
-  username = "user-kamu";         # misal "budi"
-};
-```
-
-Atau pakai env var saat rebuild (nggak usah edit flake):
-```bash
-NIXOS_HOSTNAME=nama-mesin-kamu NIXOS_USERNAME=user-kamu \
-  sudo -E nixos-rebuild switch --flake .#windflower
+hostname = "nama-mesin-kamu";   # misal "laptop-budi"
+username = "user-kamu";         # misal "budi"
 ```
 
 ### 4. Hapus mount SSD deta (kalau bukan punya flos)
@@ -111,8 +103,8 @@ sudo nixos-rebuild switch --flake .#windflower
 
 | Apa | Di mana | Cara |
 |---|---|---|
-| Hostname | `flake.nix` specialArgs | Edit atau env var `NIXOS_HOSTNAME` |
-| Username | `flake.nix` specialArgs | Edit atau env var `NIXOS_USERNAME` |
+| Hostname | `flake.nix` let block | Edit langsung |
+| Username | `flake.nix` let block | Edit langsung |
 | Packages | `config/configuration.nix` systemPackages | Edit langsung |
 | Home packages | `config/home.nix` home.packages | Edit langsung |
 | App configs (zed, hypr, dll) | `config/` | Edit langsung, symlink otomatis |

@@ -1,4 +1,4 @@
-{ serpantinum, zen-browser, dream-journey-cursor, pkgs, username ? "flos", ... }:
+{ serpantinum, zen-browser, pkgs, username ? "flos", ... }:
 
 {
   imports = [
@@ -59,13 +59,6 @@
           }
       }
     '';
-  };
-
-  # Dream Journey hyprcursor untuk Hyprland — Hyprland cari di
-  # ~/.local/share/hyprcursors/<theme>/. Nama folder = HYPRCURSOR_THEME.
-  # Di-inline dari flake input (pure-eval aman).
-  xdg.dataFile."hyprcursors/pixloen-dream-journey" = {
-    source = dream-journey-cursor + "/hyprcursors";
   };
 
   # Auto-sync TUI apps (btop/micro/nvim/kitty) ikut warna serpantinum.

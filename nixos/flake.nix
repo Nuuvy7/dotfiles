@@ -2,9 +2,7 @@
   description = "NixOS 26.05 — Hyprland + Serpantinum (dotfiles templat)";
 
   # ===== Konfigurasi per-mesin =====
-  # Ganti 2 baris ini sesuai mesin kamu sebelum rebuild pertama kali.
-  # Atau pakai --impure buat override saat rebuild:
-  #   NIXOS_HOSTNAME=myhost NIXOS_USERNAME=myuser sudo -E nixos-rebuild switch --flake .#windflower --impure
+  # Ganti hostname & username di blok `let` bawah sebelum rebuild pertama kali.
   inputs = {
     # Pin ke channel 26.05.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
@@ -32,7 +30,6 @@
     };
 
     # Zen browser: community flake + Home Manager module.
-    # Zen nggak ada di nixpkgs 26.05, jadi pakai flake ini.
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -40,26 +37,19 @@
         home-manager.follows = "home-manager";
       };
     };
-
-    # Dream Journey cursor (XCursor + Hyprcursor) — file dari Downloads.
-    # NOTE: ini flake lokal (path:), harus di-clone manual ke mesin baru.
-    # Copy folder ini ke ~/Projects/clone/dream-journey-cursor sebelum rebuild.
-    dream-journey-cursor = {
-      url = "path:/home/flos/Projects/clone/dream-journey-cursor";
-      flake = false;
-    };
   };
 
-  outputs = { self, nixpkgs, serpantinum, home-manager, qylock, fetch, zen-browser, dream-journey-cursor, ... }: {
+  outputs = { self, nixpkgs, serpantinum, home-manager, qylock, fetch, zen-browser, ... }:
+  let
+    hostname = "windflower";
+    username = "flos";
+  in {
     nixosConfigurations.windflower = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
       specialArgs = {
-        inherit dream-journey-cursor;
-        # Dinamis dari env var — override dengan:
-        # NIXOS_HOSTNAME=myhost NIXOS_USERNAME=myuser sudo -E nixos-rebuild switch --flake .#windflower --impure
-        hostname = "windflower";
-        username = "flos";
+        inherit hostname;
+        inherit username;
       };
 
       modules = [
@@ -105,7 +95,6 @@
               serpantinum = serpantinum;
               self = self;
               zen-browser = zen-browser;
-              dream-journey-cursor = dream-journey-cursor;
               pkgs = nixpkgs.legacyPackages.x86_64-linux;
               username = "flos";
             };
