@@ -1,6 +1,4 @@
-# dotfiles — NixOS Template
-
-A reproducible, flake-based NixOS 26.05 configuration featuring Hyprland, Serpantinum, and declarative application configs. Designed to be cloned and rebuilt on a new machine with minimal setup.
+# My NixOS dots
 
 ## Contents
 
