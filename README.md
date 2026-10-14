@@ -8,6 +8,8 @@ Template dotfiles NixOS 26.05 + Hyprland + Serpantinum. Flake-based, reproducibl
 nixos/
 ├── flake.nix                    # Flake: inputs (nixpkgs, home-manager, serpantinum, qylock, fetch, zen)
 ├── flake.lock
+├── assets/
+│   └── dream-journey-cursor/   # Cursor theme (XCursor + Hyprcursor)
 └── config/
     ├── configuration.nix        # System config (packages, services, Hyprland, DB, CTF tools)
     ├── hardware-configuration.nix # GENERATE SENDIRI — jangan commit

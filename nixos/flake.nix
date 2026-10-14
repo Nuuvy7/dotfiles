@@ -37,9 +37,15 @@
         home-manager.follows = "home-manager";
       };
     };
+
+    # Dream Journey cursor (XCursor + Hyprcursor) — dipindah ke repo (assets/)
+    dream-journey-cursor = {
+      url = "path:../assets/dream-journey-cursor";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, serpantinum, home-manager, qylock, fetch, zen-browser, ... }:
+  outputs = { self, nixpkgs, serpantinum, home-manager, qylock, fetch, zen-browser, dream-journey-cursor, ... }:
   let
     hostname = "windflower";
     username = "flos";
@@ -48,6 +54,7 @@
       system = "x86_64-linux";
 
       specialArgs = {
+        inherit dream-journey-cursor;
         inherit hostname;
         inherit username;
       };
@@ -95,6 +102,7 @@
               serpantinum = serpantinum;
               self = self;
               zen-browser = zen-browser;
+              dream-journey-cursor = dream-journey-cursor;
               pkgs = nixpkgs.legacyPackages.x86_64-linux;
               username = "flos";
             };

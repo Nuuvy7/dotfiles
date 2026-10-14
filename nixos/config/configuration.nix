@@ -6,8 +6,22 @@
 # disesuaikan untuk nixpkgs 26.05. Yang sudah ada (mount NTFS deta, nix-ld, kernel
 # latest, grub OSProber, stateVersion) TIDAK ditimpa — hanya ditambah yang belum ada.
 
-{ config, lib, pkgs, hostname ? "windflower", username ? "flos", ... }:
+{ config, lib, pkgs, dream-journey-cursor, hostname ? "windflower", username ? "flos", ... }:
 
+let
+  # Dream Journey cursor theme (XCursor buat SDDM + apps, Hyprcursor buat Hyprland).
+  djThemeName = "pixloen-dream-journey";
+  djXcursor = pkgs.runCommand "dream-journey-xcursor" { } ''
+    mkdir -p $out/share/icons/${djThemeName}
+    cp -r ${dream-journey-cursor}/cursors $out/share/icons/${djThemeName}/
+    cp ${dream-journey-cursor}/index.theme $out/share/icons/${djThemeName}/
+    sed -i "s|^Name=.*|Name=${djThemeName}|" $out/share/icons/${djThemeName}/index.theme
+  '';
+  djHyprcursor = pkgs.runCommand "dream-journey-hyprcursor" { } ''
+    mkdir -p $out/share/hyprcursors
+    cp ${dream-journey-cursor}/hyprcursors/*.hlc $out/share/hyprcursors/
+  '';
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -104,6 +118,10 @@
   # tanpa set manual. Kalau app bandel, tinggal restart app-nya.
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
+    XCURSOR_THEME = "pixloen-dream-journey";
+    XCURSOR_SIZE = "24";
+    HYPRCURSOR_THEME = "pixloen-dream-journey";
+    HYPRCURSOR_SIZE = "24";
   };
   qt = {
     enable = true;
@@ -442,6 +460,8 @@
     pulseaudio      # pactl (client) — serpantinum screenshot butuh ini (mute/unmute shutter sound). Pipewire yang handle audio, pactl cuma client.
     areofyl-fetch  # animated 3D fetch tool (overlay dari flake fetch)
     nodejs         # node + npm sistem-wide (buat npm install -g 9router dll)
+    djXcursor      # Dream Journey XCursor theme (SDDM + apps)
+    djHyprcursor   # Dream Journey Hyprcursor (.hlc untuk Hyprland)
 
     # --- Database GUI (kelas DB) ---
     dbeaver-bin    # GUI universal: MySQL + PostgreSQL + SQLite (paling enak buat belajar)

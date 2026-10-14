@@ -1,5 +1,17 @@
 {
   "nodes": {
+    "dream-journey-cursor": {
+      "flake": false,
+      "locked": {
+        "path": "../assets/dream-journey-cursor",
+        "type": "path"
+      },
+      "original": {
+        "path": "../assets/dream-journey-cursor",
+        "type": "path"
+      },
+      "parent": []
+    },
     "fetch": {
       "inputs": {
         "nixpkgs": [
@@ -131,6 +143,7 @@
     },
     "root": {
       "inputs": {
+        "dream-journey-cursor": "dream-journey-cursor",
         "fetch": "fetch",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
