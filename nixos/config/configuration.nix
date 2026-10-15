@@ -449,6 +449,9 @@ in
     # chromium & vivaldi dihapus — Zen browser jadi default (via Home Manager).
     obsidian zed discord
     kdePackages.dolphin nautilus
+    gnome-disk-utility            # Gnome Disks — mount/umount GUI
+    udisks                        # udisks2 backend untuk nautilus/dolphin auto-mount
+    udiskie                       # tray/CLI auto-mount removable media
     libreoffice-still
     easyeffects
     matugen quickshell satty
