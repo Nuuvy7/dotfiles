@@ -428,6 +428,7 @@ in
     vim wget kitty fastfetch wofi git curl micro yazi starship
     gparted file fuzzel
     chromium                    # browser buat profil/farming & backup
+    openvpn
 
     # --- CLI / tools baru (dari Arch) ---
     nano neovim tmux unzip

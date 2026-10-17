@@ -10,3 +10,6 @@ end
 # Hermes Agent command
 fish_add_path "$HOME/.local/bin"
 set -gx PATH $HOME/.npm-global/bin $PATH
+
+# opencode
+fish_add_path /home/flos/.opencode/bin
